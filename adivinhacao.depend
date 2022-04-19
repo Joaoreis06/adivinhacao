@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1648324650 source:d:\alura\programação\c\assets\adivinhacao\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
