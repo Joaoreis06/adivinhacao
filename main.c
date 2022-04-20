@@ -10,8 +10,6 @@
 //            printf("%.1f", pontos);
 //         }
 
-
-
 void main()
 {
     printf("*************************************\n");
@@ -24,11 +22,27 @@ void main()
     int numero_rand = rand();
     int numero_secreto = numero_rand % 100;
     int chute;
-    int i = 1;
+    int numero_tentativas;
     double pontuacao = 1000;
     int pontos_perdidos;
+    int nivel;
 
-    while(1){
+    printf("\n\n***NIVEL DE DIFICULDADE***\n\n");
+    printf("(1)- Facil | (2) - Medio | (3) - Dificil");
+    printf("\nEscolha a sua dificuldade: ");
+    scanf("%d", &nivel);
+
+    if(nivel == 3){
+        numero_tentativas = 3;
+    }
+    else if(nivel == 2){
+        numero_tentativas = 5;
+    }
+    else if(nivel == 1){
+        numero_tentativas = 10;
+    }
+
+    for(int i = 1; i <= numero_tentativas; i++){
         printf("\n\nTentativa: %d", i);
         printf("\nQual e o seu chute? ");
         scanf("%d", &chute);
@@ -63,9 +77,8 @@ void main()
         double pontos_perdidos = abs(chute - numero_secreto) / (double)2;
         pontuacao -= pontos_perdidos;
 
-        i++;
     }
-
     printf("\n\nPONTUACAO: %.1f pontos", pontuacao);
     printf("\nFINAL do jogo de adivinhacao.");
+    printf("\nA resposta certa era: %d", numero_secreto);
 }
